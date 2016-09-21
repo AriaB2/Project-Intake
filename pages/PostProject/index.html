@@ -1,8 +1,14 @@
 <style>
+  h1, h2, div {
+    font-family: "roboto";
+  }
+  body {
+    background-color: grey;
+  }
   .bigInput {
   width: 400px;
   height: 100px;
-}
+  }
   .standardButton {
     width: 80px;
     height: 40px;
@@ -20,15 +26,36 @@
 <h1>Post Your Project</h1>
 <hr>
 <h2>Project Details</h2>
-<div><input placeholder="Project Name" width="400px"></input></div>
-<div><input placeholder="Short Description"></input></div>
-<div><input placeholder="Project Details" class="bigInput"></input></div>
-<div><input placeholder="Project Tags"></input></div>
-<h2>Contact Information</h2>
-<div><input placeholder="First Name"></input></div>
-<div><input placeholder="Last Name"></input></div>
-<div><input placeholder="Phone Number"></input></div>
-<div><input placeholder="Email"></input></div>
-<div><button class="standardButton buttonAccept">Submit</button>
-<button class="standardButton buttonCancel">Cancel</button>
+<div>
+  <input placeholder="Project Name"></input>
+</div>
+<div>
+  <input placeholder="Short Description"></input>
+</div>
+<div>
+<textarea placeholder="Project Details" cols=40 rows=7></textarea>
+</div>
+<div>
+  <form>
+    <input type="radio" name="platform" value="web">Web</input>
+    <input type="radio" name="platform" value="mobile">Mobile</input>
+    <input type="radio" name="platform" value="both">Both</input>
+    <input type="radio" name="platform" value="other">Other</input>
+  </form>
+</div>
+  <h2>Contact Information</h2>
+<div>
+  <input placeholder="First Name"></input>
+</div>
+<div>
+  <input placeholder="Last Name"></input>
+</div>
+<div>
+  <input placeholder="Phone Number"></input>
+</div>
+<div>
+  <input placeholder="Email"></input>
+</div>
+<div>
+  <button class="standardButton buttonAccept">Submit</button> <button class="standardButton buttonCancel">Cancel</button>
 </div>
