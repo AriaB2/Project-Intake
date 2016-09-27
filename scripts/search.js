@@ -17,8 +17,6 @@ function matchResultsFalse(){
     var theRegex = buildRegex();
     var matches = new Array();
 
-    console.log(theRegex);
-
     for(i = 0; i < lengthOfResults; i++){
 
         if(theRegex.test(results[i]) == false) {
