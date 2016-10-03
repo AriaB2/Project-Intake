@@ -64,7 +64,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
                 echo "Inserting";
                 $query = "INSERT INTO Users(name,email,password,type) "." VALUES('$name','$email','$password','$type');";
-                $result= mysqli_query($user_db,$query) or die("Error inserting");
+                $result= mysqli_query($user_db,$query);
+                if($result){
+                    $url="http://54.191.144.229/test/pages/register_login/Login/login.php";
+                    header("Location: ".$url);
+                    exit;
+                }
 
 
             }else{

@@ -22,9 +22,13 @@ $row = mysqli_fetch_array($result);
           //Valid email , check password
           $password = $row["PASSWORD"];
           if ($input_password == $password) {
+              //Succesful Login
 
-              //TODO go to project view page
-              echo "Succesful Login";
+                  $url="http://54.191.144.229/test/pages/searchpage/index.php";
+                  header("Location: ".$url);
+                  exit;
+
+
           } else {
               echo "Invalid Password";
           }
