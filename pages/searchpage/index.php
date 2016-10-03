@@ -16,15 +16,27 @@
             </h1>
             <div class="search-wrap">
                 <form>
-                    <input id="search" type="text">
+                    <input id="search" type="text" action="none">
                 </form>
             </div>
         </div>
+        <div class="add-project-wrap">
+            <div class="add-project">
+                <a href="../postproject/">Add a project</a>
+            </div>
+        </div>
     </div>
-    <div id="search-results-wrapper">
-        <div id="search-results">
+    <div id="content-wrapper">
+        <div id="search-results-wrapper">
+            <div id="search-results">
+                <?php
+    	           require 'connect.php';
+                ?>
+            </div>
+        </div>
+        <div id="buttons-wrapper">
             <?php
-    	       require 'connect.php';
+                require 'buttons.php';
             ?>
         </div>
     </div>

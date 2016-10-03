@@ -10,7 +10,7 @@
 		</div>
 		<ul class="primary-nav__links">
 			<li><a class="primary-nav__link active" href="../../pages/searchpage">Home</a></li>
-    		<li><a class="primary-nav__link" href="#">Account</a></li>
+    		<li><a class="primary-nav__link" href="../accountsettings/accountSettings.html">Account</a></li>
     		<li><a class="primary-nav__link" href="#">Logout</a></li>
     	</ul>
 	</div>

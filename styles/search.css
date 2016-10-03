@@ -20,23 +20,50 @@ time, mark, audio, video {
 }
 
 .search-bar-wrap{
-    text-align: center;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid black;
+}
+
+.search-bar{
+    display: inline-block;
 }
 
 #search{
     width: 250px;
 }
 
+.add-project-wrap{
+    display: inline-block;
+}
+
 #search-results-wrapper{
     overflow: hidden;
 }
 
+#content-wrapper{
+    padding: 0 30px;
+}
+
 .search-result{
     float: left;
-    display: inline-block;
-    width: 33%;
+    display: none;
+    width: 50%;
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-right: 10px;
+    padding-top: 25px;
+    border-top: 1px solid grey;
+}
+
+#buttons-wrapper{
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.results-button{
+    margin: 0 3px;
 }
