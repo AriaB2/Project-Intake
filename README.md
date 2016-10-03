@@ -1,5 +1,7 @@
 # Project-Intake
 
+A 2 week project to get students used to the scrum process and creating something in a short time.
+
 Client: Instructors of Senior Design
 
 User:  Clients, Instructors, and Students
@@ -12,4 +14,3 @@ There is a myriad of projects that individuals want developed. These projects, h
 
 Solution: 
 A website that acts as a clearinghouse of proposed projects, allows projects to be selected, and then serves publicize the work of the students.
-
