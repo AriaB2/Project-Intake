@@ -38,24 +38,28 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }else{
 
             //TODO Check type against email
+            switch($var){
+                case 1:
+                    $type="Student";
+                    break;
+                case 2:
+                    $type="Client";
+                    break;
+                case 3:
+                    $type="Staff";
+                    break;
+
+            }
+            //checkTypeAgainstEmail($email,$type);
+
+
             if($password==$confirm_password){
 
 
                 $name = $first_name." ".$last_name;
 
 
-                switch($var){
-                    case 1:
-                        $type="Student";
-                        break;
-                    case 2:
-                        $type="Client";
-                        break;
-                    case 3:
-                        $type="Staff";
-                        break;
 
-                }
 
 
                 echo "Inserting";
@@ -132,7 +136,7 @@ function test_input($data){
     <script src="//use.typekit.net/gfb2mjm.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 
-    <link rel="stylesheet" href="../metaphor-master/dist/css/metaphor.css">
+    <link rel="stylesheet" href="../../../metaphor-master/dist/css/metaphor.css">
 </head>
 <body>
 
@@ -200,7 +204,7 @@ function test_input($data){
     <div class="row">
         <div class ="col-sm-3 col-sm-offset-1">
             <input type="submit" id="register" name="submit_register" value="Register">
-            <a href="../Login/login.html">Login</a>
+            <a href="../Login/login.php">Login</a>
         </div>
     </div>
     <div class="row">
@@ -216,7 +220,7 @@ function test_input($data){
 
 </form>
 
-<script src="../metaphor-master/dist/js/metaphor.js" ></script>
+<script src="../../../metaphor-master/dist/js/metaphor.js" ></script>
 
 <script>
 
