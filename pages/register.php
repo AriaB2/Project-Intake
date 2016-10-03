@@ -1,4 +1,7 @@
 <?php
+$user_db = mysqli_connect('intakedb.cbg8b2jlxopl.us-west-2.rds.amazonaws.com','Shastasanu',
+    'password','intaketest')
+or die('Error connecting to MySQL server');
 
 
 
@@ -12,14 +15,71 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $email=test_input($_POST["email"]);
     $password=test_input($_POST["password"]);
     $confirm_password=test_input($_POST["confirm_password"]);
-    $type = test_input($_POST["Type"]);
+    if(isset($_POST["type"])) {
+        $var = $_POST["type"];
+
+    }
+
+    echo $type;
 
 
-    $takenEmail = checkForUser($email);
+
+    if(strlen($first_name)>0&&strlen($last_name)>0&&strlen($email)>0&&strlen($password)>0&&$type!="0"){
+
+
+        echo "All values filled\n";
+
+        $takenEmail = checkForUser($email);
+
+
+        if($takenEmail){
+
+            //TODO throw existing user  error mesage
+        }else{
+
+            //TODO Check type against email
+            if($password==$confirm_password){
+
+
+                $name = $first_name." ".$last_name;
+
+
+                switch($var){
+                    case 1:
+                        $type="Student";
+                        break;
+                    case 2:
+                        $type="Client";
+                        break;
+                    case 3:
+                        $type="Staff";
+                        break;
+
+                }
+
+
+                echo "Inserting";
+                $query = "INSERT INTO Users(name,email,password,type) "." VALUES('$name','$email','$password','$type');";
+                $result= mysqli_query($user_db,$query) or die("Error inserting");
+
+
+            }else{
+
+                echo "Passwords don't match";
+                echo " ".$password;
+                echo " ".$confirm_password;
+                //TODO throw passwords don't match error
+            }
+
+        }
 
 
 
 
+    }
+    else{
+        echo "Not all fields filled";
+    }
 }
 
 function checkForUser($email){
@@ -31,25 +91,21 @@ function checkForUser($email){
 
     $query = "SELECT * FROM Users WHERE EMAIL = '$email'";
     $result = mysqli_query($user_db,$query);
-    echo "**** Email : $email***** \n\n";
-    echo strlen($email);
 
-    if($result&&strlen($email)>0){
+
+    if($result){
 
         $row = mysqli_fetch_array($result);
-        $email = $row['EMAIL'];
-        echo $email."\n";
-        echo "User taken";
-        return true;
-    }else{
+        if($email == $row['EMAIL']){
 
-        echo "User not taken";
-        return false;
+            echo "user taken";
+            return true;
+        }else{
+            echo "user not taken";
+            return false;
+        }
+
     }
-
-
-
-
 
 }
 
@@ -112,11 +168,11 @@ function test_input($data){
         <div class="col-sm-5 col-sm-offset-1">
             <div class="form__group">
                 <label for="type">Type</label>
-                <select name="" id="type">
+                <select name="type" id="type">
                     <option value="">-- Select Type --</option>
-                    <option value="student">Student</option>
-                    <option value="client">Client</option>
-                    <option value="staff">Staff</option>
+                    <option value="1">Student</option>
+                    <option value="2">Client</option>
+                    <option value="3">Staff</option>
                 </select>
             </div>
         </div>
@@ -137,7 +193,7 @@ function test_input($data){
         <div class="col-sm-5">
             <div class="form__group">
                 <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="conform_password"type="password" placeholder="Password">
+                <input id="confirm_password" name="confirm_password"type="password" placeholder="Password">
             </div>
         </div>
    </div>
