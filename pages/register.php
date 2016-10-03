@@ -139,19 +139,8 @@ function test_input($data){
     <link rel="stylesheet" href="../../../metaphor-master/dist/css/metaphor.css">
 </head>
 <body>
+<?php include ("../../../includes/header.php");?>
 
-<nav class="primary-nav primary-nav--cream">
-    <div class="container">
-        <div class="primary-nav__mobile">
-            <div class="primary-nav__btn">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="primary-nav__brand " ><span class="sr-only">California State University, Northridge (CSUN)</span></div>
-        </div>
-    </div>
-</nav>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
     <div class="row ">
          <div class="col-sm-5 col-sm-offset-1">

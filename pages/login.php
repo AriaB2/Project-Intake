@@ -56,18 +56,9 @@ $row = mysqli_fetch_array($result);
 </head>
 <body>
 
-<nav class="primary-nav primary-nav--cream">
-    <div class="container">
-        <div class="primary-nav__mobile">
-            <div class="primary-nav__btn">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="primary-nav__brand " ><span class="sr-only">California State University, Northridge (CSUN)</span></div>
-        </div>
-    </div>
-</nav>
+<?php include ("../../../includes/header.php");?>
+
+
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
     <div class="row ">
         <div class="col-sm-5 col-sm-offset-1">
