@@ -97,17 +97,6 @@ hr {
 pre {
   overflow: auto; }
 
-.row-centered{
-  text-align: center;
-}
-
-.col-centered{
-  display:inline-block;
-  float:none;
-  text-align: left;
-  margin-right: -4px;
-}
-
 code,
 kbd,
 pre,
@@ -3234,7 +3223,6 @@ pre {
   @media (min-width: 992px) {
     .primary-nav__mobile {
       float: left; } }
-
 
 .primary-nav__btn {
   position: absolute;
